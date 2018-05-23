@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	function converter()
+	{
+		
+		var result=(c.value == "ctok")? parseInt(b.value)+273 : (c.value=="ktoc")? parseInt(b.value)-273 : (c.value=="ktog")? parseInt(b.value)/1000: (c.value=="gtok")? parseInt(b.value)*1000: (c.value=="kitom")?parseInt(b.value)/1000: (c.value=="mtoki")? parseInt(b.value)*1000: alert(nope);
+
+		d.value=result;
+	}
+		
+	</script>
+	
+</head>
+<body>
+<table>
+	<tr><td align="center">CONVERTER</td></tr>
+	<tr><td><select id="c">
+	<option value="ctok">Celcius to Kelvin</option>
+	<option value="ktoc">Kelvin to Celcius</option>
+	<option value="ktog">Kilogram to Gram</option><option value="gtok">Gram to Kilogram</option>
+	<option value="kitom">Kilometre to Metre </option>
+	<option value="mtoki">Metre to Kilometre</option></select></td></tr>
+	<tr><td><input id="b" type="number" name=""></td></tr>
+	<tr><td><input id="d" type="number" name=""></td></tr>
+	<tr><td><input type="button" name="" value="Convert" onclick="converter()"></td></tr>
+</table>
+</body>
+</html>
