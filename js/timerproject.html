@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COUNTER TIMER</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap4/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap4/font/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/wowjs/css/libs/animate.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/wowjs/dist/wow.js">
+    <script type="text/javascript">
+    // var yy= d.getSeconds();
+    	// var stt;
+    	// var uu;
+    	var nn= new Audio("sound/alarm1.mp3");
+    	var mine;
+    	var nam;
+    	var stop;
+    	var uuu;
+    	var back;
+    	var front;
+    	var sef;
+    	var startFrom;
+    	questionss=[["28/2",14] ,["11*6",66] ["23+2",25],["45+3",48],["23+4",27],["45/5",9],["12+2",14],["34/2",17],["66/6",11],["differentiate 2x",2]];
+    	r = Math.floor(Math.random()*10);
+    	// alert (r);
+    	// alert(questionss[r]);
+
+   		function up()
+   		{
+   			var d= new Date;
+   			var u= d.getHours();
+   			var y= d.getMinutes();
+   			// var yy = d.getSeconds();
+   			  y = checkTime(y);
+   			 u = checkTime(u);
+   			 
+   			setTimeout("up()",1000);
+   			document.getElementById("min").innerHTML=  u+ ":" +y;
+   		}
+ 			
+   		function checkTime(i)
+   		{
+   			if(i < 10) 
+   				{i = "0" +i;}
+   			return i;
+   		}
+   		function add()
+   		{	
+   			nam = t1.value;
+   			mine = min.innerHTML;
+   			if (nam == mine) 
+   				{
+   					nn.loop =true;
+   					nn.play();
+   				}
+   			sef=setTimeout("add()",1000);
+   					
+   		}
+   		
+   		function stp()
+   		{
+   			// ques.value = "What is your name?";
+   			// r = Math.floor(Math.random()*10);
+   			answer = prompt(questionss[r][0]);
+   			// ques.value = questionss;
+   			// if (ans.value == ansss) 
+   			// {
+   			// 	nn.pause();
+   			// clearTimeout(stop);
+   			// }
+   			if (answer == questionss[r][1]) 
+   			{
+   				t1.value='stopped';
+   				nn.loop = false;
+   				nn.pause();
+   				clearTimeout(stop);
+   				// alert("you are right");
+   				
+   			}
+   			else
+   			{
+   				alert("you are wrong");
+   				// nn.play();
+   			}
+   			// else
+   			// {
+   			// 	alert("Try again");
+   			// }
+   			// nn.pause();
+   			// clearTimeout(stop)
+
+   		}
+   		function snooz()
+   		{
+   			uuu = t1.value;
+   			startFrom = uuu.indexOf(":");
+   			startFrom++;
+   			back=uuu.substring(startFrom,5);
+   			front = uuu.substring(0,uuu.indexOf(":"));
+   			back= parseInt(back)+1;
+   			uuu= front +":" + back;
+   			t1.value = uuu;
+   			nn.pause();
+   			add();
+   			// setInterval("snooz()", 180000);
+
+   		}
+    </script>
+    <style>
+    hr
+    {
+    	background-color: black;
+    }
+    </style>
+    
+</head>
+<body onload="up()">
+	<div class="container mt-5">
+		<div class="row">
+			 <div class="col-md-12">
+			 		<hr>
+			 			<center>
+			 				<div id="min"></div>
+			 					<!-- <div >
+			 							<button onclick="stp()" class="btn">Stop</button>
+			 							
+			 							<button onclick="srt()" class="btn offset-1">Start</button>
+			 							<button onclick="add()" class="btn"> Add Alarm</button>
+			 					</div> -->
+			 					<div class="mt-5">
+			 							Input time:<input type="text" id="t1">		
+			 				</div><br>
+			 				<div>
+			 					Question:<input type="text" id="ques"><br><br>
+			 					Input the appropriate answer:<input type="text" id="ans">
+			 				</div>
+			 					<div class="mt-2">
+			 						<button class="btn" onclick="snooz()">Snooze</button>
+			 					</div><br>
+			 					<div >
+			 							<button onclick="stp()" class="btn">Stop</button>
+			 							
+			 							<button onclick="srt()" class="btn offset-1">Start</button>
+			 							<button onclick="add()" class="btn"> Add Alarm</button>
+			 					</div>	
+			 			</center>
+			 		<hr>
+			 </div>
+		</div>
+	</div>
+	<script type="text/javascript" src="bootstrap/bootstrap4/js/popper.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap4/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap4/js/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap/wowjs/dist/wow.js"></script>
+</body>
+</html>
