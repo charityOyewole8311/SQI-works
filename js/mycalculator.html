@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SCIENTIFIC CALCULATOR</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap4/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap4/font/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/wowjs/css/libs/animate.css">
+	<script type="text/javascript">
+		var state= false;
+		var first;
+		var second;
+		var oper;
+		function button1(u)
+		{
+			if (state) 
+			{
+				if (s.value=='0') 
+				{
+					s.value=u;
+				}
+			
+			else
+			{
+			s.value+=u;	
+			}
+			
+		}
+	}
+		function myOn()
+		{
+			if (onandoff.value=="OFF") 
+			{
+				onandoff.value="ON";
+				s.value='';
+				state=false;
+			}
+			else
+			{
+				onandoff.value="OFF";
+				s.value='0';
+				state=true;
+			}
+		}
+		function operator(y)
+		{
+			first=parseInt(s.value);
+			s.value="";
+			oper =y;
+		}
+		function equals()
+		{
+			second=parseInt(s.value);
+			if (oper == "+") 
+			{
+				s.value=parseInt(first)+parseInt(second);
+			}
+			else if (oper == "-") 
+			{
+				s.value=parseInt(first)-parseInt(second);
+			}
+			else if (oper == "/") 
+			{
+				s.value=parseInt(first)/parseInt(second);
+			}
+			else if (oper == "*") 
+			{
+				s.value=parseInt(first)*parseInt(second);
+			}
+			else if (oper == "Mod") 
+			{
+				s.value=parseInt(first)%parseInt(second);
+			}
+			else if (oper == "ram")
+			{
+				s.value=Math.pow(first,second);
+			}
+			
+		}
+		function square()
+		{
+			s.value=Math.sqrt(s.value);
+		}
+		function power()
+		{
+			s.value=Math.pow(2,s.value);
+			// s.value= s.value * s.value;
+		}
+		function del()
+		{
+			var small=s.value.length;
+			s.value=s.value.slice(0,small-1);
+		}
+		function loga()
+		{
+			s.value=Math.log(s.value);
+		}
+		function logs()
+		{
+			s.value=Math.pow(10,s.value);
+		}
+		function cls()
+		{
+			s.value="";
+		}
+		function tants()
+		{
+			s.value=Math.tan(s.value);
+		}
+		function sint()
+		{
+			s.value=Math.sin(s.value);
+		}
+		function cots()
+		{
+			s.value=Math.cos(s.value);
+		}
+		function pie()
+		{
+			s.value=Math.PI;
+		}
+		function expo()
+		{
+			s.value=Math.exp(s.value);
+		}
+		
+	
+		// function rais()
+		// {
+		// 	s.value=Math.pow(first,second);
+		// }
+	
+	</script>
+	<style type="text/css">
+	.btn
+	{
+		width: 50px;
+		height: 40px;
+	}
+	#no
+	{
+		background-color: #fff;
+		color: black;
+		border: #E8B6A0;
+	}
+	#no:hover{
+		background-color: #E8B6A0;
+		border: #E8B6A0;
+	}
+	.btn
+	{
+		background-color: transparent;
+		border: #E8B6A0;
+	}
+	.container
+	{
+		background-color: #F2F2F2;
+	}
+	.btn:hover{
+		background-color: #E8B6A0;
+		border:1px solid #E8B6A0;
+	}
+	</style>
+</head>
+<body>
+<center>	
+<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3><b>SCIENTIFIC CALCULATOR</b></h3>
+				<div class="table">
+					<table class="table-bordered" style="width:50%; height:auto;">
+						<tr>
+							<td>
+								<input type="text" class="form-control" id="s">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="radio" value="radian" name="t">RAD
+								<input type="radio" value="degrees" name="t">DEG
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button class="btn">&plusmn;</button>
+								<button class="btn">HYP</button>
+								<button class="btn">F-E</button>
+								<input type="button" id="mydegg" value="DEG" onclick="myDeg()" class="btn">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button class="btn">M-</button>
+								<button class="btn">M+</button>
+								<button class="btn">MC</button>
+								<button class="btn">MS</button>
+								<button class="btn">MC</button>
+							</td>
+						</tr>
+						<tr style="background-color:#E6E6E6;">
+							<td>
+								<button class="btn" onclick="power()">X<sup>2</sup></button>
+								<button class="btn" onclick="operator('ram	')">X<sup>y</sup></button>
+								<button class="btn" onclick="cots()">cos</button>
+								<button class="btn" onclick="sint()">sin</button>
+								<button class="btn" onclick="tants()">tan</button>
+							</td>
+						</tr>
+						<tr style="background-color:#E6E6E6;">
+							<td>
+								<button class="btn">//</button>
+								<button class="btn" onclick="logs()">10<sup>x</sup></button>
+								<button class="btn" onclick="loga()">Log</button>
+								<button class="btn" onclick="expo()">Exp</button>
+								<button class="btn" onclick="operator('Mod')">Mod</button>
+							</td>
+						</tr>
+						<tr style="background-color:#E6E6E6;">
+							<td>
+								<button class="btn" onclick="square()" value="&radic;">&radic;</button>
+								<button class="btn" onclick="pie()">&pi;</button>
+								<button class="btn">&plusmn;</button>
+								<button class="btn" onclick="cls()">CE</button>
+								<button class="btn" onclick="operator('/')">/</button>
+							</td>
+						</tr>
+						<tr style="background-color:#E6E6E6;">
+							<td>
+								<button class="btn" onclick="del()">DEL</button>
+								<button class="btn" id="no" onclick="button1('7')">7</button>
+								<button class="btn" id="no"onclick="button1('8')">8</button>
+								<button class="btn" id="no"onclick="button1('9')">9</button>
+								<button class="btn" onclick="operator('*')">*</button>
+							</td>
+						</tr>
+						<tr style="background-color:#E6E6E6;">
+							<td>
+								<button class="btn">n!</button>
+								<button class="btn" id="no" onclick="button1('4')">4</button>
+								<button class="btn" id="no" onclick="button1('5')">5</button>
+								<button class="btn" id="no" onclick="button1('6')">6</button>
+								<button class="btn" onclick="operator('-')">-</button>
+							</td>
+						</tr>
+						<tr style="background-color:#E6E6E6;">
+							<td>
+								<!-- <button class="btn" onclick="myOn()" id="onandoff">ON</button> -->
+								<input type="button" class="btn" value="ON" onclick="myOn()" id="onandoff">
+								<button class="btn" id="no" onclick="button1('1')">1</button>
+								<button class="btn" id="no" onclick="button1('2')">2</button>
+								<button class="btn" id="no" onclick="button1('3')">3</button>
+								<button class="btn" onclick="operator('+')">+</button>
+							</td>
+						</tr>
+						<tr style="background-color:#E6E6E6;">
+							<td>
+								<button class="btn" onclick="equals()">=</button>
+								<button class="btn" id="no" onclick="button1('00')">00</button>
+								<button class="btn"id="no" onclick="button1('0')">0</button>
+								<button class="btn"id="no" onclick="button1('000')">000</button>
+								<button class="btn">.</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</center>	
+<script type="text/javascript" src="bootstrap/bootstrap4/js/popper.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap4/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap4/js/bootstrap.js"></script>
+</body>
+</html>
