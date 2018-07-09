@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JOB VALIDATION FORM</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap4/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap4/font/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/wowjs/css/libs/animate.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/wowjs/dist/wow.js">
+	<script type="text/javascript">
+	</script>
+	<style>
+	.container
+	{
+		background-color: #F6F6F6;
+	}
+	input[type=text]
+	{
+		border: none;
+		border-bottom: 1px solid red;
+	}
+	input[type=email]
+	{
+		border: none;
+		border-bottom: 1px solid red;
+	}
+	input[type=password]
+	{
+		border: none;
+		border-bottom: 1px solid red;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<form action="myjob.html">
+				<form class="form">
+				<div>
+				<fieldset>
+				<legend><h3 style="font-family:Comic Sans Ms;"><b>JOB VALIDATION FORM</b></h3>
+				</fieldset>
+				</legend>
+				</div>
+				<div class="col-md-5">
+					<form class="form">
+						<fieldset>
+							<div class="form-group ">
+								<label style="font-family:Comic Sans Ms; padding-right:30px !important;" class="pr-5">FIRSTNAME:</label>
+									<span class="input-group">
+										<i class="fa fa-user " style="font-size:20px;"></i>
+											<input type="text" class="form-control" style="margin-left:10px !important;" placeholder="Enter your name">
+									</span>
+							</div>
+							<div class="form-group ">
+								<label style="font-family:Comic Sans Ms; padding-right:30px !important;" class="pr-5">LASTNAME:</label>
+									<span class="input-group">
+										<i class="fa fa-user " style="font-size:20px;"></i>
+											<input type="text" class="form-control" style="margin-left:10px !important;" placeholder="Enter your name">
+									</span>
+							</div>
+							<div class="form-group ">
+								<label style="font-family:Comic Sans Ms; padding-right:30px !important;" class="pr-5">EMAIL:</label>
+									<span class="input-group">
+										<i class="fa fa-envelope" style="font-size:20px;"></i>
+											<input type="email" class="form-control" style="margin-left:10px !important;" placeholder="Enter your email address">
+									</span>
+							</div>
+							<div class="form-group ">
+								<label style="font-family:Comic Sans Ms; padding-right:30px !important;" class="pr-5">PASSWORD:</label>
+									<span class="input-group">
+										<i class="fa fa-key " style="font-size:20px;"></i>
+											<input type="password" style="margin-left:10px !important;" class="form-control" placeholder="Please enter your password">
+									</span>
+							</div>
+							<div class="form-group ">
+								<label style="font-family:Comic Sans Ms; padding-right:30px !important;" class="pr-5">CONFIRM PASSWORD:</label>
+									<span class="input-group">
+										<i class="fa fa-lock " style="font-size:20px;"></i>
+											<input type="password" style="margin-left:10px !important;" class="form-control" placeholder="Please confirm your password">
+									</span>
+							</div>
+								<div class="form-group ">
+								<label style="font-family:Comic Sans Ms; padding-right:30px !important;" class="pr-5">Gender:</label><br>
+								<input type="radio" name="gender" value="Male" >Male
+								<input type="radio" name="gender" value="Female" >Female
+							</div>
+							<div class="form-group ">
+								<label style="font-family:Comic Sans Ms; padding-right:30px !important;" class="pr-5">Hobbies:</label><br>
+								<input type="checkbox" name="Hobbies"  value="Swimming">Swimming
+								<input type="checkbox" name="Hobbies"  value="Singing">Singing<br>
+								<input type="checkbox" name="Hobbies" value="Eating">Eating
+								<input type="checkbox" name="Hobbies"  value="Dancing">Dancing
+							</div>
+							<div class="form-group ">
+								<label style="font-family:Comic Sans Ms; padding-right:30px !important;" class="pr-5">State:</label>
+								<select>
+									<option>Osun</option>
+									<option>Oyo</option>
+									<option>Lagos</option>
+									<option>Kwara</option>
+								</select>
+							</div>
+							<div class="form-group ">
+								<label style="font-family:Comic Sans Ms; padding-right:30px !important;" class="pr-5">City:</label>
+								<select>
+								</select>
+							</div>
+							<div class="form-group">
+								<button type="submit"  class="btn btn-md" onclick="reset()">Reset</button>
+								<button type="submit" class="btn btn-md " onclick="sub()">Submit</button>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				</form>
+			</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="bootstrap/bootstrap4/js/popper.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap4/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap4/js/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap/wowjs/dist/wow.js"></script>
+</body>
+</html>
